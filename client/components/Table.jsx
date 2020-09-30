@@ -1,13 +1,22 @@
-import React from 'react'
+import React, { Component} from 'react'
 
-class Table extends React.Component {
-  
+import Cart from './Cart'
+import Categories from './Categories'
+import Menu from './Menu'
+import TableDetails from './TableDetails'
+
+// API CALL GATHERS ALL DATA AND PASSES IT DOWN THROUGH PROPS 5HEAD
+
+export class Table extends Component {
     render () {  
-    return (
-        <>
-          <h1>Scan your tables QR Code to join table order.</h1>
-        </>
-      )
+        return (
+            <>
+                <TableDetails />
+                <Cart />
+                <Categories />
+                <Menu />
+            </>
+        )
     }
   }
   

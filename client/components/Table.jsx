@@ -9,7 +9,7 @@ import Data from'../../data.json'
 
 // API CALL GATHERS ALL DATA AND PASSES IT DOWN THROUGH PROPS 5HEAD
 
-const mockData = Data.companies[0].tables[0]
+const mockData = Data.companies[0]
 
 export class Table extends Component {
     render () {  

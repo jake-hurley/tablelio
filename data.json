@@ -4,7 +4,22 @@
         "tables": [
             {
                 "tableName": "Table 1",
-                "cart": [],
+                "cart": [
+                    {
+                        "id": 1,
+                        "name":"Heineken",
+                        "price": 8.5,
+                        "stock": 85,
+                        "category": "beer and wine"
+                    },
+                    {
+                        "id": 2,
+                        "name":"Monteiths",
+                        "price": 11,
+                        "stock": 75,
+                        "category": "beer and wine"
+                    }
+                ],
                 "order": [],
                 "totalPrice": 0
             },
@@ -23,36 +38,42 @@
         ],
         "stock": [
             {
+                "id": 1,
                 "name":"Heineken",
                 "price": 8.5,
                 "stock": 85,
                 "category": "beer and wine"
             },
             {
+                "id": 2,
                 "name":"Monteiths",
                 "price": 11,
                 "stock": 75,
                 "category": "beer and wine"
             },
             {
+                "id": 3,
                 "name":"Corona",
                 "price": 9.5,
                 "stock": 112,
                 "category": "beer and wine"
             },
             {
+                "id": 4,
                 "name":"Asahi",
                 "price": 10.5,
                 "stock": 102,
                 "category": "beer and wine"
             },
             {
+                "id": 5,
                 "name":"Little Creatures",
                 "price": 10,
                 "stock": 98,
                 "category": "beer and wine"
             },
             {
+                "id": 6,
                 "name":"Sol",
                 "price": 8.5,
                 "stock": 66,

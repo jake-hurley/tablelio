@@ -2,8 +2,7 @@ import React from 'react'
 
 class TableDetails extends React.Component {
     render () {
-        console.log(this.props.data)
-        const tableData = this.props.data
+        const tableData = this.props.data.tables[0]
         return (
             <>
                 <h1>{tableData.tableName}</h1>

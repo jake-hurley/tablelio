@@ -6,19 +6,19 @@
                 "tableName": "Table 1",
                 "cart": [],
                 "order": [],
-                "total price": 0
+                "totalPrice": 0
             },
             {
                 "tableName": "Table 2",
                 "cart": [],
                 "order": [],
-                "total price": 0
+                "totalPrice": 0
             },
             {
                 "tableName": "Table 3",
                 "cart": [],
                 "order": [],
-                "total price": 0
+                "totalPrice": 0
             }
         ],
         "stock": [

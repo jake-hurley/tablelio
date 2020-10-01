@@ -2,7 +2,6 @@ import React from 'react'
 
 class Menu extends React.Component {
     render () {
-        console.log(this.props.data)
         const stockData = this.props.data.stock
         return (
             <>
@@ -12,7 +11,7 @@ class Menu extends React.Component {
                         return (
                             <div key={item.id}>
                                 <h1>{item.name}</h1>
-                                <h1>{item.price}</h1>
+                                <h1>${item.price}</h1>
                             </div>
                         )
                     } else {

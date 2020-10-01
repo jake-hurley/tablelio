@@ -15,6 +15,7 @@ export class Table extends Component {
     render () {  
         return (
             <>
+                <h1>{mockData.companyName}</h1>
                 <TableDetails data={mockData}/>
                 <Cart data={mockData}/>
                 <Categories data={mockData}/>

@@ -11,7 +11,7 @@ class Cart extends React.Component {
                     return (
                         <div key={item.id}>
                             <h2>{item.name}</h2>
-                            <h2>{item.price}</h2>
+                            <h2>${item.price}</h2>
                         </div>
                     )
                 })}

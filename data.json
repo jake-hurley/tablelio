@@ -78,6 +78,13 @@
                 "price": 8.5,
                 "stock": 66,
                 "category": "beer and wine"
+            },
+            {
+            "id": 7,
+            "name":"Vodka Lemonade",
+            "price": 8.5,
+            "stock": 66,
+            "category": "spirits"
             }
         ]
     }

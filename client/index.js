@@ -14,7 +14,7 @@ const store = createStore(
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Provider store={store}>
-    <App />
+      <App />
     </Provider>,
     document.getElementById('app')
   )

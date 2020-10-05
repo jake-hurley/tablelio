@@ -1,12 +1,17 @@
 import React from 'react'
+import { connect } from 'react-redux'
+
 
 class Menu extends React.Component {
     render () {
         const stockData = this.props.data.stock
+        console.log(this.props)
         return (
             <>
                 <h1>menu</h1>
                 {stockData.map(item => {
+                    console.log(this.props.state.category.category)
+                    if( item.category === this.props.state.category.category) {
                     if (item.stock > 0) {
                         return (
                             <div key={item.id}>
@@ -21,10 +26,17 @@ class Menu extends React.Component {
                             </div>
                         )
                     }
+                }
                 })}
             </>
         )
     }
 }
 
-export default Menu
+const mapStateToProps = (state) => {
+    return {
+        state
+    }
+}
+
+export default connect(mapStateToProps)(Menu)

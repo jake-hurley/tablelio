@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { connect } from 'react-redux'
 
 import category from '../actions/actions'
 
@@ -13,10 +13,12 @@ class Categories extends React.Component {
         this.setState({
             [name]: value
         })
-        useDispatch(category(this.state.currentCategory))
+        console.log(this.state)
+        this.props.currentCategory(this.state.currentCategory)
     }
     
     render () {
+        console.log(this.props)
         return (
             <>
                 <h1>The Bar</h1>
@@ -31,4 +33,19 @@ class Categories extends React.Component {
     }
 }
 
-export default Categories
+const mapDispatchToProps = (dispatch) => {
+    return {
+        currentCategory: (category) => dispatch({type: 'CATEGORY', category: category})
+    }
+}
+
+const mapStateToProps = (state) => {
+    return {
+        state
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Categories)

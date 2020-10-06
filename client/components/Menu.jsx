@@ -7,7 +7,6 @@ class Menu extends React.Component {
         const stockData = this.props.data.stock
         return (
             <>
-                <h1>Menu</h1>
                 {stockData.map(item => {
                     if(( item.category === this.props.state.category.category ) || ( this.props.state.category.category === '' )) {
                         if (item.stock > 0) {

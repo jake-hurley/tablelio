@@ -31,7 +31,7 @@ class Categories extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        currentCategory: (category) => dispatch({type: 'CATEGORY', category: category})
+        currentCategory: (category) => dispatch({type: 'CATEGORY', category})
     }
 }
 

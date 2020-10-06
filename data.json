@@ -80,12 +80,19 @@
                 "category": "beer and wine"
             },
             {
-            "id": 7,
-            "name":"Vodka Lemonade",
-            "price": 8.5,
-            "stock": 66,
-            "category": "spirits"
-            }
+                "id": 7,
+                "name":"Vodka Lemonade",
+                "price": 8.5,
+                "stock": 22,
+                "category": "spirits"
+            },
+            {
+                "id": 8,
+                "name":"Long Island Ice Tea",
+                "price": 8.5,
+                "stock": 33,
+                "category": "cocktails"
+                }
         ]
     }
 

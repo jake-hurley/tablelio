@@ -4,25 +4,21 @@ import { connect } from 'react-redux'
 import category from '../actions/actions'
 
 class Categories extends React.Component {
-    state = {
-        currentCategory: 'beer and wine'
-    }
 
     changeHandler = (ev) => {
         const { name, value } = ev.target
         this.setState({
-            [name]: value
-        })
-        console.log(this.state)
-        this.props.currentCategory(this.state.currentCategory)
+            currentCategory: value
+        }, () => this.props.currentCategory(this.state.currentCategory)
+        )
     }
     
     render () {
-        console.log(this.props)
         return (
             <>
                 <h1>The Bar</h1>
                 <select name='currentCategory' onChange={this.changeHandler}>
+                    <option value=''>All Drinks</option>
                     <option value='beer and wine'>Beer and Wine</option>
                     <option value='spirits'>Spirits</option>
                     <option value='cocktails'>Cocktails</option>

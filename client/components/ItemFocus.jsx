@@ -5,6 +5,7 @@ class ItemFocus extends React.Component {
         return (
             <>
                 <h1>We are looking at an Item</h1>
+                <h1>{this.props.data.name}</h1>
             </>
         )
     }

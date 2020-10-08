@@ -3,6 +3,11 @@ import { connect } from 'react-redux'
 
 
 class Cart extends React.Component {
+
+    clickHandler = (item) => {
+        this.props.removeFromCart(item)
+    }
+
     render () {
         const cartData = this.props.state.cart.cart
         console.log(this.props)
@@ -14,6 +19,7 @@ class Cart extends React.Component {
                     return (
                         <div key={item.id}>
                             <h1>{item.name}</h1>
+                            <button onClick={() => this.clickHandler(item)}>remove from cart</button>
                         </div>
                     )
                 } else {
@@ -39,6 +45,12 @@ const mapStateToProps = (state) => {
     }
 }
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        removeFromCart: (item) => dispatch({type: 'REMOVE_FROM_CART', item})
+    }
+}
 
 
-export default connect(mapStateToProps)(Cart)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart)

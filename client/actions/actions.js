@@ -12,6 +12,13 @@ export const addToCart = (item) => {
         }
 }
 
+export const removeFromCart = (item) => {
+    return {
+        type: "REMOVE_FROM_CART",
+        item: item
+    }
+}
+
 export const viewItem =  (item) => {
     return {
         type: 'VIEW_ITEM',

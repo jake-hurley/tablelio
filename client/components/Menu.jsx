@@ -8,7 +8,6 @@ class Menu extends React.Component {
 
     state = {
         itemSelected: false
-
     }
 
     clickHandler = (itemObject) => {
@@ -54,7 +53,7 @@ class Menu extends React.Component {
                     if(( item.category === this.props.state.category.category ) || ( this.props.state.category.category === '' )) {
                         if (item.stock > 0) {
                             return (
-                                <div key={item.id}>
+                                <div key={item.id} onClick={() => this.clickHandler(item)}>
                                     <h1>{item.name}</h1>
                                     <h1>${item.price}</h1>
                                 </div>

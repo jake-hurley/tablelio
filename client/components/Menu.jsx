@@ -17,7 +17,7 @@ class Menu extends React.Component {
         this.setState({
             itemSelected: true,
             itemObject: itemObject
-        }, () => console.log(this.state.itemObject))  
+        }, () => this.props.viewItem(itemObject))  
     }
 
     render () {
@@ -49,7 +49,7 @@ class Menu extends React.Component {
         } else {
             return (
                 <>
-                <ItemFocus data={this.state.itemObject} />
+                <ItemFocus />
                 {stockData.map(item => {
                     if(( item.category === this.props.state.category.category ) || ( this.props.state.category.category === '' )) {
                         if (item.stock > 0) {
@@ -80,4 +80,10 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(Menu)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        viewItem: (item) => dispatch({type: 'VIEW_ITEM', item})
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Menu)

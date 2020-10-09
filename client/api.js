@@ -14,3 +14,14 @@ var firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
+
+
+  export function retrieveCompanyData (companyName) {
+    firebase.database().ref('companies').once('value')
+    .then(snapshot => {
+      const companyData = snapshot.val()
+      const selectedCompany = companyData.find(company => company.companyName === companyName)
+      console.log(selectedCompany)
+      return selectedCompany
+    })
+  }

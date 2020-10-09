@@ -3,8 +3,15 @@ import { connect } from 'react-redux'
 
 import ItemFocus from './ItemFocus'
 
+import { retrieveCompanyData } from '../api'
+
 
 class Menu extends React.Component {
+
+    componentDidMount () {
+        retrieveCompanyData('Diablo Bar')
+        .then()
+    }
 
     state = {
         itemSelected: false

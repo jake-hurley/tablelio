@@ -25,3 +25,10 @@ export const viewItem =  (item) => {
         item: item
     }
 }
+
+export const setResturantData = (data) => {
+    return {
+        type: 'SET_RESTURANT_DATA',
+        data: data
+    }
+}

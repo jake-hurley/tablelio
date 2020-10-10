@@ -32,3 +32,9 @@ export const setResturantData = (data) => {
         data: data
     }
 }
+
+export const isLoaded = () => {
+    return {
+        type: 'IS_LOADED'
+    }
+}

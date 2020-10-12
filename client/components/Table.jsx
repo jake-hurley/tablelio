@@ -6,7 +6,7 @@ import Categories from './Categories'
 import Menu from './Menu'
 import TableDetails from './TableDetails'
 
-import { retrieveCompanyData } from '../api'
+import { retrieveCompanyData, submitOrder } from '../api'
 
 import Data from'../../data.json'
 
@@ -18,42 +18,38 @@ export class Table extends Component {
 
     componentWillMount () {
         this.getResturantData('Diablo Bar', 1)
+        submitOrder('Diablo Bar', 2)
+        .then(function (snapshot) {
+            console.log(snapshot.val())
+        })
     }
 
     getResturantData = (companyName, tableNumber) => {
         retrieveCompanyData(companyName)
-        .then(function (snapshot) {
+        .then(snapshot => {
             const companyData = snapshot.val()
-            const selectedCompany = companyData.find(company => company.companyName === companyName)
-            const selectedTable =  selectedCompany.tables.find(table => table.tableNumber === tableNumber )
-            selectedCompany.tables = selectedTable
-            return selectedCompany
+            this.props.setResturantData(companyData)
+            this.props.isLoaded()
           })
-          .then(data => {
-                this.props.setResturantData(data)
-                this.props.isLoaded()
-            })
     }
 
     render () {  
         if(this.props.state.isLoaded.isLoaded) {
-            // console.log(this.props)
-        return (
-            <>
-                {/* <h1>{mockData.companyName}</h1> */}
-                {/* <TableDetails /> */}
-                <Cart/>
-                <Categories/>
-                <Menu/>
-            </>
-        )
-
-    } else {
-        return (
-            <h1>Loading</h1>
-        )
+            return (
+                <>
+                    {/* <h1>{mockData.companyName}</h1> */}
+                    {/* <TableDetails /> */}
+                    <Cart/>
+                    <Categories/>
+                    <Menu/>
+                </>
+            )
+        } else {
+            return (
+                <h1>Loading</h1>
+            )
+        }
     }
-  }
 }
 
   

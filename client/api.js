@@ -1,4 +1,5 @@
 import * as firebase from 'firebase'
+import { Children } from 'react';
 
 var firebaseConfig = {
     apiKey: "AIzaSyCmv-d4_5MONGmvfcsPGXdlBDIDcZbxMd4",
@@ -17,5 +18,11 @@ var firebaseConfig = {
 
 
   export function retrieveCompanyData (companyName) {
-    return firebase.database().ref('companies').once('value')
+    return firebase.database().ref('companies').child(companyName).once('value')
+  }
+
+  export function submitOrder (companyName, tableNumber, cart) {
+    const databaseQuery = firebase.database().ref('companies/' + companyName + '/tables').child(tableNumber).once('value')
+    return databaseQuery
+    // .equalTo(1, 'tableNumber') .child('tables')
   }

@@ -1,23 +1,20 @@
-{"companies": [
+{"companies": 
     {
-        "companyName": "Diablo Bar",
-        "tables": [
-            {
-                "tableNumber": 1,
+        "Diablo Bar": {
+        "tables": {
+            "1" : {
                 "order": [],
                 "totalPrice": 0
             },
-            {
-                "tableNumber": 2,
+            "2": {
                 "order": [],
                 "totalPrice": 0
             },
-            {
-                "tableNumber": 3,
+            "3": {
                 "order": [],
                 "totalPrice": 0
             }
-        ],
+        },
         "stock": [
             {
                 "id": 1,
@@ -77,5 +74,5 @@
                 }
         ]
     }
-
-]}
+    }
+}

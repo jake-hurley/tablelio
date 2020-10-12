@@ -3,35 +3,17 @@
         "companyName": "Diablo Bar",
         "tables": [
             {
-                "tableName": "Table 1",
-                "cart": [
-                    {
-                        "id": 1,
-                        "name":"Heineken",
-                        "price": 8.5,
-                        "stock": 85,
-                        "category": "beer and wine"
-                    },
-                    {
-                        "id": 2,
-                        "name":"Monteiths",
-                        "price": 11,
-                        "stock": 75,
-                        "category": "beer and wine"
-                    }
-                ],
+                "tableNumber": 1,
                 "order": [],
                 "totalPrice": 0
             },
             {
-                "tableName": "Table 2",
-                "cart": [],
+                "tableNumber": 2,
                 "order": [],
                 "totalPrice": 0
             },
             {
-                "tableName": "Table 3",
-                "cart": [],
+                "tableNumber": 3,
                 "order": [],
                 "totalPrice": 0
             }

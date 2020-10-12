@@ -32,14 +32,6 @@ class Cart extends React.Component {
                         }
                     })}
                     <h1>cart Total : ${this.props.state.cart.cartTotal}</h1>
-                    {/* {cartData.map(item => {
-                        return (
-                            <div key={item.id}>
-                                <h2>{item.name}</h2>
-                                <h2>${item.price}</h2>
-                            </div>
-                        )
-                    })} */}
                 </>
             )
         }

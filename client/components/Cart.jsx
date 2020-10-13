@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { updateOrder } from '../actions/actions'
 
-import { submitOrder } from '../api'
+import { submitOrder, updatePriceTotal } from '../api'
 
 class Cart extends React.Component {
 
@@ -10,15 +10,19 @@ class Cart extends React.Component {
         this.props.removeFromCart(item)
     }
 
-    submitCart = (cart) => {
+    submitCart = (cart, totalPrice) => {
         cart.map(cartItem => {
-            this.props.updateOrder(cartItem)
+            this.props.updateOrder(cartItem, totalPrice)
         })
-        setTimeout(() => submitOrder("Diablo Bar", 2, this.props.state.cart.order), 100)
+        setTimeout(() => {
+        submitOrder("Diablo Bar", 2, this.props.state.cart.order)
+        updatePriceTotal("Diablo Bar", 2, this.props.state.cart.totalPrice)
+    }, 100)
     }
 
     render () {
         const cartData = this.props.state.cart.cart
+        const cartTotal = this.props.state.cart.cartTotal
         if(!this.props.state.isLoaded.isLoaded){
             return (
                 <h1>Loading</h1>
@@ -42,7 +46,8 @@ class Cart extends React.Component {
                         }
                     })}
                     <h1>cart Total : ${this.props.state.cart.cartTotal}</h1>
-                    <button onClick={() => this.submitCart(cartData)}>Submit Order</button>
+                    <h1>Order Total : ${this.props.state.cart.totalPrice}</h1>
+                    <button onClick={() => this.submitCart(cartData, cartTotal)}>Submit Order</button>
                 </>
             )
         }
@@ -58,7 +63,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         removeFromCart: (item) => dispatch({type: 'REMOVE_FROM_CART', item}),
-        updateOrder: (cart) => dispatch({type: 'UPDATE_ORDER', cart})
+        updateOrder: (cart, totalPrice) => dispatch({type: 'UPDATE_ORDER', cart, totalPrice})
     }
 }
 

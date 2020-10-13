@@ -39,9 +39,10 @@ export const isLoaded = () => {
     }
 }
 
-export const updateOrder = (cartItem) => {
+export const updateOrder = (cartItem, totalPrice) => {
     return {
         type: 'UPDATE_ORDER',
-        cart: cartItem
+        cart: cartItem,
+        totalPrice: totalPrice
     }
 }

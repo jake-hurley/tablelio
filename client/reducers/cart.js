@@ -1,7 +1,8 @@
 const initialState = {
     cart: [],
     cartTotal: 0,
-    order: []
+    order: [],
+    totalPrice: 0
 }
 
 const cartReducer = (state = initialState, action) => {
@@ -23,7 +24,8 @@ const cartReducer = (state = initialState, action) => {
         case 'UPDATE_ORDER':
                 return {
                     ...state,
-                    order: [...state.order, action.cart]
+                    order: [...state.order, action.cart],
+                    totalPrice: state.totalPrice + action.totalPrice
                 }
 
         default:

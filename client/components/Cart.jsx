@@ -1,10 +1,20 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { updateOrder } from '../actions/actions'
+
+import { submitOrder } from '../api'
 
 class Cart extends React.Component {
 
     clickHandler = (item) => {
         this.props.removeFromCart(item)
+    }
+
+    submitCart = (cart) => {
+        cart.map(cartItem => {
+            this.props.updateOrder(cartItem)
+        })
+        setTimeout(() => submitOrder("Diablo Bar", 2, this.props.state.cart.order), 100)
     }
 
     render () {
@@ -32,6 +42,7 @@ class Cart extends React.Component {
                         }
                     })}
                     <h1>cart Total : ${this.props.state.cart.cartTotal}</h1>
+                    <button onClick={() => this.submitCart(cartData)}>Submit Order</button>
                 </>
             )
         }
@@ -46,7 +57,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        removeFromCart: (item) => dispatch({type: 'REMOVE_FROM_CART', item})
+        removeFromCart: (item) => dispatch({type: 'REMOVE_FROM_CART', item}),
+        updateOrder: (cart) => dispatch({type: 'UPDATE_ORDER', cart})
     }
 }
 

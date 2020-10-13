@@ -38,3 +38,10 @@ export const isLoaded = () => {
         type: 'IS_LOADED'
     }
 }
+
+export const updateOrder = (cartItem) => {
+    return {
+        type: 'UPDATE_ORDER',
+        cart: cartItem
+    }
+}

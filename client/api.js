@@ -22,7 +22,9 @@ var firebaseConfig = {
   }
 
   export function submitOrder (companyName, tableNumber, cart) {
-    const databaseQuery = firebase.database().ref('companies/' + companyName + '/tables').child(tableNumber).once('value')
-    return databaseQuery
-    // .equalTo(1, 'tableNumber') .child('tables')
+    // console.log(cart)
+    const tableQuery = firebase.database().ref('companies/' + companyName + '/tables' + '/' + tableNumber).child('order')
+    tableQuery.set({
+      order: cart
+    })
   }

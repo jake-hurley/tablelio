@@ -1,6 +1,7 @@
 const initialState = {
     cart: [],
-    cartTotal: 0
+    cartTotal: 0,
+    order: []
 }
 
 const cartReducer = (state = initialState, action) => {
@@ -18,6 +19,12 @@ const cartReducer = (state = initialState, action) => {
                 cart: state.cart.filter(cartItem => cartItem.id !== action.item.id ),
                 cartTotal: state.cartTotal - action.item.price
             }
+
+        case 'UPDATE_ORDER':
+                return {
+                    ...state,
+                    order: [...state.order, action.cart]
+                }
 
         default:
             return state

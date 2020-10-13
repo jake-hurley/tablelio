@@ -18,10 +18,10 @@ export class Table extends Component {
 
     componentWillMount () {
         this.getResturantData('Diablo Bar', 1)
-        submitOrder('Diablo Bar', 2)
-        .then(function (snapshot) {
-            console.log(snapshot.val())
-        })
+        // submitOrder('Diablo Bar', 2)
+        // .then(function (snapshot) {
+        //     console.log(snapshot.val())
+        // })
     }
 
     getResturantData = (companyName, tableNumber) => {

@@ -20,7 +20,7 @@ class Menu extends React.Component {
     }
 
     render () {
-        console.log(this.props)
+        // console.log(this.props)
         const stockData = this.props.state.resturantData.resturantData.stock
         if(!this.props.state.isLoaded) {
             return (

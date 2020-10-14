@@ -10,18 +10,10 @@ import { retrieveCompanyData, submitOrder } from '../api'
 
 import Data from'../../data.json'
 
-// API CALL GATHERS ALL DATA AND PASSES IT DOWN THROUGH PROPS 5HEAD
-
-// const mockData = Data.companies[0]
-
 export class Table extends Component {
 
     componentWillMount () {
         this.getResturantData('Diablo Bar', 1)
-        // submitOrder('Diablo Bar', 2)
-        // .then(function (snapshot) {
-        //     console.log(snapshot.val())
-        // })
     }
 
     getResturantData = (companyName, tableNumber) => {
@@ -52,7 +44,6 @@ export class Table extends Component {
     }
 }
 
-  
 const mapStateToProps = (state) => {
     return {
         state

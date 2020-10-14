@@ -28,6 +28,13 @@ const cartReducer = (state = initialState, action) => {
                     totalPrice: state.totalPrice + action.totalPrice
                 }
 
+        case 'EMPTY_CART':
+            return {
+                ...state,
+                cart: [],
+                cartTotal: 0
+            }
+
         default:
             return state
         }

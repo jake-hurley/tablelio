@@ -15,9 +15,10 @@ class Cart extends React.Component {
             this.props.updateOrder(cartItem, totalPrice)
         })
         setTimeout(() => {
-        submitOrder("Diablo Bar", 2, this.props.state.cart.order)
-        updatePriceTotal("Diablo Bar", 2, this.props.state.cart.totalPrice)
-    }, 100)
+            submitOrder("Diablo Bar", 2, this.props.state.cart.order)
+            updatePriceTotal("Diablo Bar", 2, this.props.state.cart.totalPrice)
+        }, 100)
+        this.props.emptyCart()
     }
 
     render () {
@@ -62,6 +63,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        emptyCart: () => dispatch({type: 'EMPTY_CART'}),
         removeFromCart: (item) => dispatch({type: 'REMOVE_FROM_CART', item}),
         updateOrder: (cart, totalPrice) => dispatch({type: 'UPDATE_ORDER', cart, totalPrice})
     }

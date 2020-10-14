@@ -19,6 +19,12 @@ export const removeFromCart = (item) => {
     }
 }
 
+export const emptyCart = () => {
+    return {
+        type: 'EMPTY_CART'
+    }
+}
+
 export const viewItem =  (item) => {
     return {
         type: 'VIEW_ITEM',

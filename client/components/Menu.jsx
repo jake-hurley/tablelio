@@ -9,7 +9,7 @@ import { retrieveCompanyData } from '../api'
 class Menu extends React.Component {
 
     state = {
-        itemSelected: false,
+        itemSelected: false
     }
 
     clickHandler = (itemObject) => {

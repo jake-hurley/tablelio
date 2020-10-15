@@ -6,12 +6,13 @@ import Tables from './Tables'
 
 class Home extends React.Component {
     render () {
-        <>
-            <CompanyDetails />
-            <Tables />
-        </>
+        return (
+            <>
+                <CompanyDetails />
+                <Tables />
+            </>
+        )
     }
-
 }
 
 export default Home

@@ -6,6 +6,10 @@ import Categories from './Categories'
 import Menu from './Menu'
 import TableDetails from './TableDetails'
 
+// TESTING STAFFSIDE
+
+import Home from './staffSide/Home'
+
 import { retrieveCompanyData, submitOrder } from '../api'
 
 import Data from'../../data.json'
@@ -34,6 +38,7 @@ export class Table extends Component {
                     <Cart/>
                     <Categories/>
                     <Menu/>
+                    <Home />
                 </>
             )
         } else {

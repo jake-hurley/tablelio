@@ -22,17 +22,17 @@ var firebaseConfig = {
   }
 
   export function submitOrder (companyName, tableNumber, cart) {
-    // console.log(cart)
     const tableQuery = firebase.database().ref('companies/' + companyName + '/tables' + '/' + tableNumber).child('order')
     tableQuery.set(cart)
   }
 
   export function updatePriceTotal (companyName, tableNumber, totalPrice) {
     const tableQuery = firebase.database().ref('companies/' + companyName + '/tables' + '/' + tableNumber + '/' + 'totalPrice')
-    // return tableQuery
-    // .then(function (snapshot) {
-    //   console.log(snapshot.val())
-    // })
     tableQuery.set(totalPrice)
 
   }
+
+  export function retrieveTableData (companyName) {
+    const tableQuery = firebase.database().ref('companies/' + companyName + '/tables')
+    return tableQuery.on('value')
+  } 
